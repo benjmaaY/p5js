@@ -8,10 +8,6 @@ function setup() {
     frameRate(dynamicFrameRate);
     createFoodAtRandomLoc();
 }
-function createFoodAtRandomLoc () {
-    food = createVector(floor(random(floor(width/snakeThickness))),floor(random(floor(height/snakeThickness))));
-    food.mult(snakeThickness);
-}
 function draw() {
     background(80);    
     if(snakeObj.eat(food)) {
@@ -29,6 +25,7 @@ function keyPressed() {
     else if (keyCode === LEFT_ARROW) snakeObj.direction(-1,0);
     else if (keyCode === RIGHT_ARROW) snakeObj.direction(1,0);
 }
-function mousePressed() {
-    snakeObj.totlength++;
+function createFoodAtRandomLoc () {
+    food = createVector(floor(random(floor(width/snakeThickness))),floor(random(floor(height/snakeThickness))));
+    food.mult(snakeThickness);
 }
